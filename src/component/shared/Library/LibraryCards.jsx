@@ -6,7 +6,7 @@ const Librarydetails = ({ workout }) => {
     return (
         <Link
             key={workout.id}
-            href={`/workout/${workout.id}`}
+            href={`/exercise/${workout.id}`}
             className="group"
         >
             <article className="overflow-hidden rounded-2xl border border-[#25282d] bg-[#111316] transition hover:border-[#ccff00]/40">
