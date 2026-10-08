@@ -1,50 +1,48 @@
-import Link from "next/link";
-import logo from "@/assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
+import NavbarCounters from "./NavbarCounters";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
     return (
-        <nav className="border-b border-[#25282d]">
-            <div className="container mx-auto flex h-14 items-center justify-between px-4">
+        <nav className="border-b border-[#25282d] bg-[#0b0c0e]">
+            <div className="container mx-auto flex h-16 items-center justify-between px-4">
 
-                <div className="flex items-center gap-4">
+                {/* Logo */}
+                <Link
+                    href="/"
+                    className="flex items-center gap-2"
+                >
                     <Image
                         src={logo}
-                        alt="Logo"
+                        alt="FitLog Logo"
                         className="h-8 w-8 rounded-full object-cover"
                     />
-                    <h2 className="font-Oswald font-bold">
+
+                    <h2 className="font-oswald text-lg font-bold tracking-wide">
                         FITLOG
                     </h2>
-                </div>
+                </Link>
 
-
-                <div className="flex items-center gap-6">
+                {/* Navigation */}
+                <div className="flex items-center gap-2">
                     <Link
                         href="/"
-                        className="rounded-2xl bg-[#ccff00] px-5 py-1 text-sm text-black"
+                        className="rounded-full px-4 py-2 font-inter text-sm text-gray-400 transition hover:bg-[#151817] hover:text-white"
                     >
-                        Workouts
+                        Workout
                     </Link>
 
                     <Link
                         href="/my-plan"
-                        className="text-sm text-gray-500 hover:text-white"
+                        className="rounded-full px-4 py-2 font-inter text-sm text-gray-400 transition hover:bg-[#151817] hover:text-white"
                     >
                         My Plan
                     </Link>
                 </div>
 
-                {/* Status */}
-                <div className="flex items-center gap-3 text-xs">
-                    <span className="rounded-full bg-[#ccff00] px-2.5 py-1 text-black">
-                        Plan
-                    </span>
-
-                    <span className="rounded-full border border-gray-600 px-2.5 py-1 text-gray-300">
-                        Saved
-                    </span>
-                </div>
+                {/* Client Component */}
+                <NavbarCounters />
 
             </div>
         </nav>

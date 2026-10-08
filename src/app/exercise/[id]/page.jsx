@@ -1,3 +1,4 @@
+import WorkoutActions from "@/component/exercise/WorkoutAction";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -143,7 +144,7 @@ const WorkoutDetails = async ({ params }) => {
                 </span>
 
                 <span className="flex items-center gap-1 font-inter text-sm text-gray-200">
-                 
+
                   {workout.rating}
                 </span>
               </div>
@@ -175,27 +176,7 @@ const WorkoutDetails = async ({ params }) => {
           </section>
 
           {/* ================= ACTION BUTTONS ================= */}
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-
-            {/* Add to Today's Plan */}
-            <button
-              type="button"
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#ccff00] px-5 py-3.5 font-oswald text-sm font-semibold uppercase text-black transition hover:bg-[#b8e600]"
-            >
-              
-              Add to today's plan
-            </button>
-
-            {/* Save for Later */}
-            <button
-              type="button"
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#30343a] px-5 py-3.5 font-oswald text-sm font-semibold uppercase text-white transition hover:border-[#ccff00] hover:text-[#ccff00]"
-            >
-              
-              Save for later
-            </button>
-
-          </div>
+          <WorkoutActions workout={workout} />
 
         </div>
       </div>
