@@ -1,10 +1,7 @@
-import Link from 'next/link';
-import React from 'react';
+import { redirect } from "next/navigation";
 
-const page = () => {
-    return (
-        <div></div>
-    );
+const Exercise = () => {
+  redirect("/#library");
 };
 
-export default page;
+export default Exercise;
