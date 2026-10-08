@@ -3,7 +3,14 @@ import Link from "next/link";
 import Librarydetails from "./LibraryCards";
 
 const getWorkouts = async () => {
-    const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
+    const res = await fetch(
+        "https://api.api-store.workers.dev/api/fitlog",
+        {
+            next: {
+                revalidate: 3600,
+            },
+        }
+    );
 
     if (!res.ok) {
         throw new Error("Failed to fetch workout data");
@@ -11,7 +18,7 @@ const getWorkouts = async () => {
 
     const data = await res.json();
     return data;
-};
+};  
 
 const Library = async () => {
     const workouts = await getWorkouts();
