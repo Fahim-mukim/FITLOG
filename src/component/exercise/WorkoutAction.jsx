@@ -40,7 +40,7 @@ const WorkoutActions = ({ workout }) => {
         <button
           type="button"
           onClick={handleAddToPlan}
-          className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-oswald text-sm font-semibold uppercase text-black transition active:scale-[0.98] ${
+          className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-inter text-sm font-semibold  text-black transition active:scale-[0.98] ${
             isInPlan
               ? "cursor-not-allowed bg-gray-500"
               : "bg-[#ccff00] hover:bg-[#b8e600] hover:shadow-[0_0_20px_rgba(204,255,0,0.15)]"
@@ -52,7 +52,7 @@ const WorkoutActions = ({ workout }) => {
         <button
           type="button"
           onClick={handleSaveWorkout}
-          className={`flex flex-1 items-center justify-center gap-2 rounded-xl border px-5 py-3.5 font-oswald text-sm font-semibold uppercase transition active:scale-[0.98] ${
+          className={`flex flex-1 items-center justify-center gap-2 rounded-xl border px-5 py-3.5 font-inter text-sm font-semibold  transition active:scale-[0.98] ${
             isSaved
               ? "cursor-not-allowed border-gray-600 text-gray-500"
               : "border-[#30343a] text-white hover:border-[#ccff00] hover:text-[#ccff00]"

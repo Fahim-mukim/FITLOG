@@ -3,9 +3,12 @@
 import Link from "next/link";
 import { useWorkout } from "@/context/WorkoutContext";
 import Image from "next/image";
+import { sortWorkouts } from "@/lib/sortWorkouts";
 
-const TodayPlan = () => {
+const TodayPlan = ({ sortBy = "default" }) => {
+
     const { todayPlan, removeFromPlan, toggleCompleted } = useWorkout();
+    const sortedWorkouts = sortWorkouts(todayPlan, sortBy);
 
     if (todayPlan.length === 0) {
         return (

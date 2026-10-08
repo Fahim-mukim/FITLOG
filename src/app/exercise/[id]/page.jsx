@@ -67,7 +67,7 @@ const WorkoutDetails = async ({ params }) => {
             {workout.muscleGroups.map((muscle) => (
               <span
                 key={muscle}
-                className="rounded-full border border-[#30343a] px-3 py-1.5 font-inter text-xs uppercase text-gray-300"
+                className="rounded-full border bg-[#ccff00] px-3 py-1.5 font-inter text-xs font-bold uppercase text-[#000000]"
               >
                 {muscle}
               </span>
@@ -76,74 +76,69 @@ const WorkoutDetails = async ({ params }) => {
 
           {/* ================= KEY SPECS ================= */}
           <section className="mt-8 overflow-hidden rounded-2xl border border-[#25282d] bg-[#111316]">
-            <div className="border-b border-[#25282d] px-5 py-4">
-              <h2 className="font-oswald text-xl font-semibold uppercase">
-                KEY SPECS
-              </h2>
-            </div>
 
             <div className="divide-y divide-[#25282d]">
 
-              <div className="flex justify-between gap-5 px-5 py-3">
-                <span className="font-inter text-xs uppercase text-gray-500">
+              <div className="flex justify-between gap-5 px-5 py-3  text-gray-200 font-bold">
+                <span className="font-inter text-xs uppercase">
                   Equipment
                 </span>
-                <span className="text-right font-inter text-sm text-gray-200">
+                <span className="text-right font-inter text-sm">
                   {workout.equipment}
                 </span>
               </div>
 
               <div className="flex justify-between gap-5 px-5 py-3">
-                <span className="font-inter text-xs uppercase text-gray-500">
+                <span className="font-inter text-xs uppercase">
                   Difficulty
                 </span>
-                <span className="font-inter text-sm text-gray-200">
+                <span className="font-inter text-sm ">
                   {workout.difficulty}
                 </span>
               </div>
 
               <div className="flex justify-between gap-5 px-5 py-3">
-                <span className="font-inter text-xs uppercase text-gray-500">
+                <span className="font-inter text-xs uppercase">
                   Sets
                 </span>
-                <span className="font-inter text-sm text-gray-200">
+                <span className="font-inter text-sm">
                   {workout.sets}
                 </span>
               </div>
 
               <div className="flex justify-between gap-5 px-5 py-3">
-                <span className="font-inter text-xs uppercase text-gray-500">
+                <span className="font-inter text-xs uppercase">
                   Reps
                 </span>
-                <span className="font-inter text-sm text-gray-200">
+                <span className="font-inter text-sm">
                   {workout.reps}
                 </span>
               </div>
 
               <div className="flex justify-between gap-5 px-5 py-3">
-                <span className="font-inter text-xs uppercase text-gray-500">
+                <span className="font-inter text-xs uppercase">
                   Duration
                 </span>
-                <span className="font-inter text-sm text-gray-200">
+                <span className="font-inter text-sm">
                   {workout.duration} min
                 </span>
               </div>
 
               <div className="flex justify-between gap-5 px-5 py-3">
-                <span className="font-inter text-xs uppercase text-gray-500">
+                <span className="font-inter text-xs uppercase">
                   Calories
                 </span>
-                <span className="font-inter text-sm text-gray-200">
+                <span className="font-inter text-sm">
                   {workout.caloriesBurned} kcal
                 </span>
               </div>
 
               <div className="flex justify-between gap-5 px-5 py-3">
-                <span className="font-inter text-xs uppercase text-gray-500">
+                <span className="font-inter text-xs uppercase">
                   Rating
                 </span>
 
-                <span className="flex items-center gap-1 font-inter text-sm text-gray-200">
+                <span className="flex items-center gap-1 font-inter text-sm">
 
                   {workout.rating}
                 </span>
@@ -154,7 +149,7 @@ const WorkoutDetails = async ({ params }) => {
 
           {/* ================= INSTRUCTIONS ================= */}
           <section className="mt-8">
-            <h2 className="font-oswald text-2xl font-semibold uppercase">
+            <h2 className="font-inter text-2xl font-semibold ">
               INSTRUCTIONS
             </h2>
 
@@ -162,7 +157,7 @@ const WorkoutDetails = async ({ params }) => {
               {workout.instructions.map((instruction, index) => (
                 <li key={index} className="flex gap-4">
 
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#ccff00] font-oswald text-sm font-bold text-black">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#ccff00] font-inter text-sm font-bold text-black">
                     {index + 1}
                   </span>
 

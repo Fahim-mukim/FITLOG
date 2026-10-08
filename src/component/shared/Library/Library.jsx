@@ -29,18 +29,18 @@ const Library = async () => {
             {/* Section Heading */}
             <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                    <p className="font-inter text-xs font-medium uppercase tracking-[0.2em] text-[#ccff00]">
-                        WORKOUT LIBRARY
+                    <h2 className="mt-2 font-oswald text-3xl font-bold uppercase sm:text-4xl lg:text-5xl">
+                        THE LIBRARY
+                    </h2>
+                    <p className="font-inter text-xs font-medium mt-3  text-[#9CA3AF]">
+                       Twelve lifts covering every major muscle group.
                     </p>
 
-                    <h2 className="mt-2 font-oswald text-3xl font-bold uppercase sm:text-4xl lg:text-5xl">
-                        Pick Your Workout
-                    </h2>
                 </div>
-
                 <p className="max-w-md font-inter text-sm leading-6 text-gray-500">
                     Choose a workout, check the details, and add it to your plan.
                 </p>
+
             </div>
 
             {/* Workout Cards */}
