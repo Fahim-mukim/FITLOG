@@ -1,3 +1,4 @@
+
 import PlanSummary from "@/component/my-plan/PlanSummary";
 import PlanTabs from "@/component/my-plan/PlanTabs";
 import TodayPlan from "@/component/my-plan/TodayPlan";
@@ -8,18 +9,11 @@ const MyPlan = async ({ searchParams }) => {
 
   const activeTab = params?.tab === "saved" ? "saved" : "today";
 
-  const allowedSortOptions = [
-    "default",
-    "duration-asc",
-    "duration-desc",
-    "calories-desc",
-    "rating-desc",
-    "name-asc",
-  ];
+  const allowedSortOptions = ["duration", "calories", "rating"];
 
   const sortBy = allowedSortOptions.includes(params?.sort)
     ? params.sort
-    : "default";
+    : "duration";
 
   return (
     <main className="container mx-auto px-4 py-10 sm:py-14">

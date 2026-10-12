@@ -5,9 +5,10 @@ import Image from "next/image";
 import { useWorkout } from "@/context/WorkoutContext";
 import { sortWorkouts } from "@/lib/sortWorkouts";
 
-const SavedWorkouts = ({ sortBy = "default" }) => {
+const SavedWorkouts = ({ sortBy = "duration" }) => {
     const { savedWorkouts, removeFromSaved } = useWorkout();
-      const sortedWorkouts = sortWorkouts(savedWorkouts, sortBy);
+
+    const sortedWorkouts = sortWorkouts(savedWorkouts, sortBy);
     if (savedWorkouts.length === 0) {
         return (
             <div className="rounded-2xl border border-[#25282d] bg-[#111316] px-6 py-16 text-center">
@@ -31,7 +32,7 @@ const SavedWorkouts = ({ sortBy = "default" }) => {
 
     return (
         <div className="flex flex-col gap-4">
-            {savedWorkouts.map((workout) => (
+            {sortedWorkouts.map((workout) => (
                 <article
                     key={workout.id}
                     className="flex flex-col gap-5 overflow-hidden rounded-2xl border border-[#25282d] bg-[#111316] p-4 transition hover:border-[#3b4148] md:flex-row md:items-center md:justify-between"

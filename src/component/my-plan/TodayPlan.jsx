@@ -5,9 +5,9 @@ import { useWorkout } from "@/context/WorkoutContext";
 import Image from "next/image";
 import { sortWorkouts } from "@/lib/sortWorkouts";
 
-const TodayPlan = ({ sortBy = "default" }) => {
-
+const TodayPlan = ({ sortBy = "duration" }) => {
     const { todayPlan, removeFromPlan, toggleCompleted } = useWorkout();
+
     const sortedWorkouts = sortWorkouts(todayPlan, sortBy);
 
     if (todayPlan.length === 0) {
@@ -33,7 +33,7 @@ const TodayPlan = ({ sortBy = "default" }) => {
 
     return (
         <div className="flex flex-col gap-4">
-            {todayPlan.map((workout) => (
+            {sortedWorkouts.map((workout) => (
                 <article
                     key={workout.id}
                     className={`flex flex-col gap-5 overflow-hidden rounded-2xl border bg-[#111316] p-4 transition md:flex-row md:items-center md:justify-between ${workout.completed

@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const PlanTabs = ({ activeTab, sortBy }) => {
+const PlanTabs = ({ activeTab, sortBy = "duration" }) => {
   const router = useRouter();
 
   const handleSortChange = (event) => {
@@ -21,22 +21,20 @@ const PlanTabs = ({ activeTab, sortBy }) => {
       <div className="inline-flex w-fit gap-1 rounded-xl border border-[#30343a] bg-[#1a1c20] p-1.5">
         <Link
           href={`/my-plan?tab=today&sort=${sortBy}`}
-          className={`rounded-lg px-4 py-2.5 font-inter text-sm font-semibold transition duration-200 ${
-            activeTab === "today"
+          className={`rounded-lg px-4 py-2.5 font-inter text-sm font-semibold transition ${activeTab === "today"
               ? "bg-[#3a3d42] text-white"
               : "text-gray-400 hover:bg-[#25282d] hover:text-white"
-          }`}
+            }`}
         >
           Today's Plan
         </Link>
 
         <Link
           href={`/my-plan?tab=saved&sort=${sortBy}`}
-          className={`rounded-lg px-4 py-2.5 font-inter text-sm font-semibold transition duration-200 ${
-            activeTab === "saved"
+          className={`rounded-lg px-4 py-2.5 font-inter text-sm font-semibold transition ${activeTab === "saved"
               ? "bg-[#3a3d42] text-white"
               : "text-gray-400 hover:bg-[#25282d] hover:text-white"
-          }`}
+            }`}
         >
           Saved
         </Link>
@@ -48,26 +46,39 @@ const PlanTabs = ({ activeTab, sortBy }) => {
           htmlFor="workout-sort"
           className="whitespace-nowrap font-inter text-sm text-gray-400"
         >
-          Sort by
+          Sort By
         </label>
 
-        <select
-          id="workout-sort"
-          value={sortBy}
-          onChange={handleSortChange}
-          className="min-w-44 rounded-xl border border-[#30343a] bg-[#1a1c20] px-3 py-2.5 font-inter text-sm text-white outline-none transition focus:border-gray-500"
-        >
-          <option value="default">Default Order</option>
-          <option value="duration-asc">Duration: Shortest First</option>
-          <option value="duration-desc">Duration: Longest First</option>
-          <option value="calories-desc">Calories: Highest First</option>
-          <option value="rating-desc">Rating: Highest First</option>
-          <option value="name-asc">Name: A–Z</option>
-        </select>
+        <div className="relative">
+          <select
+            id="workout-sort"
+            value={sortBy}
+            onChange={handleSortChange}
+            className="w-40 appearance-none rounded-xl border border-[#30343a] bg-[#1a1c20] py-2.5 pl-3 pr-10 font-inter text-sm text-white outline-none transition hover:border-gray-500 focus:border-[#ccff00]"
+          >
+            <option value="duration">Duration</option>
+            <option value="calories">Calories</option>
+            <option value="rating">Rating</option>
+          </select>
+
+          {/* Chevron Icon */}
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.22 7.22a.75.75 0 0 1 1.06 0L10 10.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 8.28a.75.75 0 0 1 0-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );
 };
 
 export default PlanTabs;
-
